@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios';
+
 import { Container, Typography } from '@mui/material';
 import './App.css';
 import TodoList from './components/todoList';
@@ -9,18 +9,6 @@ function App() {
   const [list, setList] = useState([]);
 
 
-  useEffect(() => {
-    const fetchTareas = async () => {
-      try {
-        const response = await axios.get('http://localhost:3000/api/tareas/');
-        console.log('Tareas:', response.data);
-      } catch (error) {
-        console.error('Error fetching the tareas:', error);
-      }
-    };
-
-    fetchTareas();
-  }, []);
 
 
 
